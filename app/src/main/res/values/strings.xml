@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FuturamaProject</string>
+    <string name="main_fragment_button_text">Futurama Time</string>
+    <string name="main_fragment_above_button_text">Look up character quotes</string>
+</resources>
