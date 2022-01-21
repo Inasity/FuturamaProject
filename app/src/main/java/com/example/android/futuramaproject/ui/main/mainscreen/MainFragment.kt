@@ -37,6 +37,13 @@ class MainFragment : Fragment() {
             )
         }
 
+        binding.button2.setOnClickListener { v: View ->
+            v.findNavController().navigate(
+                MainFragmentDirections
+                    .actionMainFragmentToCharactersFragment()
+            )
+        }
+
         return binding.root
     }
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="character"
+            type="com.example.android.futuramaproject.network.data.FuturamaCharacter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/characterAgeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:characterAge="@{character.age}"
+            app:layout_constraintEnd_toEndOf="@+id/characterProfessionTextView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/nameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/characterRaceTextView"
+            tools:text="Age: 25- 41 (chronologically 2×1040 (Due to the time travel))" />
+
+        <ImageView
+            android:id="@+id/charImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:scaleType="fitXY"
+            app:imageUrl="@{character.picUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/characterProfessionTextView"
+            app:layout_constraintTop_toBottomOf="@+id/characterProfessionTextView"
+            app:srcCompat="@drawable/error_image" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@{character.name}"
+            android:textColor="#FFC107"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/characterProfessionTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Philip J. Fry" />
+
+        <TextView
+            android:id="@+id/characterRaceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{character.species}"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/characterAgeTextView"
+            app:layout_constraintStart_toStartOf="@+id/nameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+            tools:text="Human" />
+
+        <TextView
+            android:id="@+id/characterProfessionTextView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:characterProfession="@{character.profession}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/characterAgeTextView"
+            tools:text="Profession: Currently: Intergalactic delivery boyFormerly: Pizza delivery boy, emperor, pope, slave, cryogenics administrator, captain, first-mate, animal trainer, holophone player, holophone composer, police officer, soldierAs Lars: Head tank feeder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

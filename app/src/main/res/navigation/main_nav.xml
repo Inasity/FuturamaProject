@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_mainFragment_to_quotesFragment"
             app:destination="@id/quotesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
     </fragment>
     <fragment
         android:id="@+id/quotesFragment"
         android:name="com.example.android.futuramaproject.ui.futuramaquotes.QuotesFragment"
         android:label="QuotesFragment"
         tools:layout="@layout/fragment_quotes"/>
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.example.android.futuramaproject.ui.futuramacharacters.CharactersFragment"
+        android:label="CharactersFragment"
+        tools:layout="@layout/fragment_characters"/>
 </navigation>
