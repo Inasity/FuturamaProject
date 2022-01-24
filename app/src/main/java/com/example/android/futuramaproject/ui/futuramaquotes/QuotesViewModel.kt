@@ -9,6 +9,7 @@ import com.example.android.futuramaproject.network.data.CharQuote
 import com.example.android.futuramaproject.network.networkmodel.ServiceResult
 import com.example.android.futuramaproject.network.repo.FuturamaRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -18,7 +19,7 @@ import javax.inject.Inject
 class QuotesViewModel @Inject constructor(
     application: Application,
     private val futuramaRepo: FuturamaRepo,
-    private val dispatchers: Dispatchers
+    private val dispatchers: CoroutineDispatcher
 ) : AndroidViewModel(application) {
 
     private val _quoteFeed = MutableLiveData<List<CharQuote>?>()
@@ -27,7 +28,7 @@ class QuotesViewModel @Inject constructor(
         get() = _quoteFeed
 
     fun getQuotes() {
-        viewModelScope.launch(dispatchers.IO) {
+        viewModelScope.launch(dispatchers) {
             when (val response = futuramaRepo.fetchFuturamaQuotes())
             {
                 is ServiceResult.Success -> {

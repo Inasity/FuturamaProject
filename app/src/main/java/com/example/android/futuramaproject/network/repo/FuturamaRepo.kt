@@ -12,11 +12,4 @@ interface FuturamaRepo {
     suspend fun fetchFuturamaQuotes(): ServiceResult<List<CharQuote>?>
 
     suspend fun fetchFuturamaCharacters(): ServiceResult<List<FuturamaCharacter>?>
-
-    companion object {
-        fun provideFuturamaRepo(dispatcher: Dispatchers, retroObject: FuturamaApiEndPoints)
-        : FuturamaRepo {
-            return FuturamaRepoImpl(dispatcher, retroObject)
-        }
-    }
 }
